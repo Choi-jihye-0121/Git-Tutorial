@@ -6,14 +6,11 @@ public class phoneNumber {
 
 	public String solution(String phone_number) {
 
-		String answer = "";
-		int len = phone_number.length();
-
-		for (int i = 0; i < len; i++) {
-			String a = phone_number.charAt(i) + "";
-			answer = (i < len - 4) ? answer + a.replace(a, "*") : answer + a;
-		}
-		return answer;
+		char[] arr = phone_number.toCharArray();
+        for(int i = 0; i<arr.length-4; i++) {
+           arr[i] ='*';
+        }
+        return String.valueOf(arr);  
 	}
 
 	public static void main(String[] args) {
